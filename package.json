@@ -1,6 +1,6 @@
 {
   "name": "crypto-portfolio",
-  "homepage": "https://gandreottola.github.io/crypto-portfolio",
+  "homepage": "https://gandreottola.github.io/crypto-portfolio-client/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
