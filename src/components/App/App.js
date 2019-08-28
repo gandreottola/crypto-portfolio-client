@@ -9,6 +9,11 @@ import SignIn from '../SignIn/SignIn'
 import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
 
+import CreateCrypto from '../CreateCrypto/CreateCrypto'
+import IndexCryptos from '../IndexCryptos/IndexCryptos'
+import UpdateCrypto from '../UpdateCrypto/UpdateCrypto'
+import ShowCrypto from '../Cryptos/ShowCrypto'
+
 class App extends Component {
   constructor () {
     super()
@@ -48,12 +53,25 @@ class App extends Component {
           <Route path='/sign-in' render={() => (
             <SignIn alert={this.alert} setUser={this.setUser} />
           )} />
+          <AuthenticatedRoute user={user} exact path='/cryptos' render={() => (
+            <IndexCryptos alert={this.alert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/cryptos/:id' render={() => (
+            <ShowCrypto alert={this.alert} user={user} />
+          )} />
           <AuthenticatedRoute user={user} path='/sign-out' render={() => (
             <SignOut alert={this.alert} clearUser={this.clearUser} user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword alert={this.alert} user={user} />
           )} />
+          <AuthenticatedRoute user={user} path='/createCrypto' render={() => (
+            <CreateCrypto alert={this.alert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/cryptos/:id/updateCrypto'
+            render={() => (
+              <UpdateCrypto alert={this.alert} user={user} />
+            )} />
         </main>
       </Fragment>
     )
