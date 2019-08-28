@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react'
-// import { Link } from 'react-router-dom'
 import { indexCryptos } from '../../api/cryptos'
 // import axios from 'axios'
 // import apiUrl from '../../apiConfig'
