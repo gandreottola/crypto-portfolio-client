@@ -29,12 +29,12 @@ const CryptoForm = ({ crypto, handleChange, handleSubmit }) => (
             onChange={handleChange}
           />
         </Form.Group>
-        <Form.Group controlId="buyDate">
+        <Form.Group controlId="buy_date">
           <Form.Label>Buy Date</Form.Label>
           <Form.Control
             required
-            name="buyDate"
-            value={crypto.buyDate}
+            name="buy_date"
+            value={crypto.buy_date}
             type="date"
             placeholder="Buy Date"
             onChange={handleChange}
@@ -57,6 +57,7 @@ const CryptoForm = ({ crypto, handleChange, handleSubmit }) => (
         >
         Submit
         </Button>
+        <Button href={'#cryptos'}>cancel</Button>
       </Form>
     </div>
   </div>
