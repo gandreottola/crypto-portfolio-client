@@ -18,11 +18,16 @@ made on excel file to the webpage.
 [Heroku](https://crypto-portfolio-server.herokuapp.com/)
 
 ## Technologies Used
-  * React (Frontend Framework)      * CSS
-  * Boostrap                        * JAVASCRIPT(ES6, JSX) -> axios(API)
-  * Mongoose                        * MongoDB
-  * Express                         * Node.js
-  * Heroku                          * Git
+  * React (Frontend Framework)
+  * CSS
+  * Boostrap
+  * JAVASCRIPT(ES6, JSX) -> axios(API)
+  * Mongoose
+  * MongoDB
+  * Express
+  * Node.js
+  * Heroku
+  * Git
 
 Used curl scripts to test out API in terminal before testing API on browser
 to ensure the CRUD requests were working properly.
