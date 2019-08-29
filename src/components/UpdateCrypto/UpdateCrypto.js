@@ -7,27 +7,31 @@ import messages from '../AutoDismissAlert/messages'
 import CryptoForm from '../Cryptos/CryptoForm'
 
 class UpdateCrypto extends Component {
-    state = {
-      crypto: null
+  state = {
+    crypto: {
+      name: '',
+      price: '',
+      buy_date: '',
+      amount: ''
     }
+  }
 
-    componentDidMount () {
-      const { user } = this.props
+  componentDidMount () {
+    const { user } = this.props
 
-      showCrypto(this.props.match.params.id, user)
-        .then((response) => {
-          this.setState({ crypto: response.data.crypto })
+    showCrypto(this.props.match.params.id, user)
+      .then((response) => {
+        this.setState({ crypto: response.data.crypto })
+      })
+      .catch((error) => {
+        console.error(error)
+        alert({
+          heading: 'Error',
+          message: 'Cant retrieve data',
+          variant: 'danger'
         })
-
-        .catch((error) => {
-          console.error(error)
-          alert({
-            heading: 'Error',
-            message: 'Cant retrieve data',
-            variant: 'danger'
-          })
-        })
-    }
+      })
+  }
 
   handleChange = event => {
     this.setState({
@@ -49,8 +53,8 @@ class UpdateCrypto extends Component {
             message: messages.createCryptoSuccess,
             variant: 'success'
           })
-          // Works only with path /crypto
-          this.props.history.push(`/cryptos/${this.state.crypto._id}`)
+
+          this.props.history.push('/cryptos')
         })
         .catch(error => {
           console.error(error)

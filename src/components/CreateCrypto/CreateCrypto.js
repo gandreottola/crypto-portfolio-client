@@ -11,7 +11,7 @@ state = {
   crypto: {
     name: '',
     price: '',
-    buyDate: '',
+    buy_date: '',
     amount: ''
   }
 }
@@ -27,7 +27,7 @@ state = {
 
   onCreateCrypto = event => {
     event.preventDefault()
-
+    console.log(this.state.crypto.buy_date)
     const { alert, user } = this.props
     createCrypto(this.state.crypto, user)
       .then(response => {
@@ -37,7 +37,7 @@ state = {
           variant: 'success'
         })
 
-        this.props.history.push(`/crypto/${response.data.crypto._id}`)
+        this.props.history.push('/cryptos')
       })
       .catch(error => {
         console.error(error)
