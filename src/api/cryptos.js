@@ -12,14 +12,14 @@ export const createCrypto = (crypto, user) => {
       crypto: {
         name: crypto.name,
         price: crypto.price,
-        buy_date: crypto.buyDate,
+        buy_date: crypto.buy_date,
         amount: crypto.amount
       }
     }
   })
 }
 
-export const indexCryptos = user => {
+export const indexCryptos = (user) => {
   return axios({
     url: apiUrl + '/cryptos',
     method: 'GET',
@@ -50,9 +50,19 @@ export const updateCrypto = (id, user, crypto) => {
       crypto: {
         name: crypto.name,
         price: crypto.price,
-        buy_date: crypto.buyDate,
+        buy_date: crypto.buy_date,
         amount: crypto.amount
       }
+    }
+  })
+}
+
+export const deleteCrypto = (id, user) => {
+  return axios({
+    url: apiUrl + `/cryptos/${id}`,
+    method: 'DELETE',
+    headers: {
+      'Authorization': `Token token=${user.token}`
     }
   })
 }
