@@ -54,7 +54,7 @@ class App extends Component {
             <SignIn alert={this.alert} setUser={this.setUser} />
           )} />
           <AuthenticatedRoute user={user} exact path='/cryptos' render={() => (
-            <IndexCryptos alert={this.alert} user={user} />
+            <IndexCryptos alert={this.alert} user={user}/>
           )} />
           <AuthenticatedRoute user={user} exact path='/cryptos/:id' render={() => (
             <ShowCrypto alert={this.alert} user={user} />
