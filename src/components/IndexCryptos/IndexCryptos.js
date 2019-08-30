@@ -6,6 +6,11 @@ import Spinner from 'react-bootstrap/Spinner'
 import Table from 'react-bootstrap/Table'
 import Button from 'react-bootstrap/Button'
 
+// import ReactHTMLTableToExcel from 'react-html-table-to-excel'
+// import ReactExport from 'react-data-export'
+// const ExcelFile = ReactExport.ExcelFile
+// const ExcelSheet = ReactExport.ExcelFile.ExcelSheet
+
 class IndexCryptos extends Component {
   constructor () {
     super()
@@ -96,7 +101,7 @@ class IndexCryptos extends Component {
       //     ? <div>Add Some Crypto</div>
       <Fragment>
         <Button className="add-crypto" href={'#createCrypto'}>Add Crypto</Button>
-        <Table striped bordered hover variant="dark">
+        <Table id="table" striped bordered hover variant="dark">
           <thead>
             <tr>
               <th>Name</th>
@@ -111,8 +116,6 @@ class IndexCryptos extends Component {
           </tbody>
         </Table>
       </Fragment>
-      //   }
-      // </div>
     )
   }
 }

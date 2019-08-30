@@ -5,7 +5,8 @@ import Button from 'react-bootstrap/Button'
 const CryptoForm = ({ crypto, handleChange, handleSubmit }) => (
   <div className="row">
     <div className="col-sm-10 col-md-8 mx-auto mt-5">
-      <h3>Add CryptoCurrrency</h3>
+      {crypto._id !== true ? <h3>Update CryptoCurrrency</h3>
+        : <h3>Add CryptoCurrrency</h3>}
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="name">
           <Form.Label>Crypto Name</Form.Label>
@@ -23,7 +24,7 @@ const CryptoForm = ({ crypto, handleChange, handleSubmit }) => (
           <Form.Control
             required
             name="price"
-            value={crypto.price}
+            value= {crypto.price}
             type="text"
             placeholder="Price"
             onChange={handleChange}

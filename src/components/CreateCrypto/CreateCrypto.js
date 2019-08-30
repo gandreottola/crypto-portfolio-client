@@ -27,7 +27,7 @@ state = {
 
   onCreateCrypto = event => {
     event.preventDefault()
-    console.log(this.state.crypto.buy_date)
+
     const { alert, user } = this.props
     createCrypto(this.state.crypto, user)
       .then(response => {
