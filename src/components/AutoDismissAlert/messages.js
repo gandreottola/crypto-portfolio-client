@@ -6,8 +6,12 @@ export default {
   signOutSuccess: 'Come back soon!',
   changePasswordSuccess: 'Password changed successfully!',
   changePasswordFailure: 'Failed to change passwords. Check your old password and try again.',
-  createCryptoSuccess: 'Successfully Created Crypto!',
-  createCryptoFailure: 'Failed Creating Crypto.',
-  indexCryptosSuccess: 'Here Are Your Invested CryptoCurrrencies!',
-  indexCryptosFailure: 'Failed Showing CryptoCurrrencies.'
+  createCryptoSuccess: 'Successfully Created Cryptocurrency!',
+  createCryptoFailure: 'Failed Creating Cryptocurrency!',
+  indexCryptosSuccess: 'Here Are Your Invested Cryptos!',
+  indexCryptosFailure: 'Failed Showing Cryptos!',
+  deleteCryptoSuccess: 'Your Cryptocurrency Has Been Succesfully Removed!',
+  deleteCryptoFailure: 'Deleting Cryptocurrency Has Failed!',
+  updateCryptoSuccess: 'You Have Successfully Updated Your Cryptocurrency!',
+  updateCryptoFailure: 'Updating Cryptocurrency Has Failed!'
 }

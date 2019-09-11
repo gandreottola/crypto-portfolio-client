@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 
 import { updateCrypto, showCrypto } from '../../api/cryptos'
-// import messages from '../AutoDismissAlert/messages'
+import messages from '../AutoDismissAlert/messages'
 
 import CryptoForm from '../Cryptos/CryptoForm'
 
@@ -49,8 +49,7 @@ class UpdateCrypto extends Component {
       updateCrypto(this.state.crypto._id, user, this.state.crypto)
         .then(response => {
           alert({
-            heading: 'Success!!',
-            message: ' Successful Crypto Update!',
+            heading: messages.updateCryptoSuccess,
             variant: 'success'
           })
 
@@ -60,8 +59,7 @@ class UpdateCrypto extends Component {
           console.error(error)
           this.setState({ name: '', price: '', buyDate: '', amount: '' })
           alert({
-            heading: 'Fail!',
-            message: 'Failed Crypto Update',
+            heading: messages.updateCryptoFailure,
             variant: 'danger'
           })
         })

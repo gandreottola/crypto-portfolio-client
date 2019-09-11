@@ -13,7 +13,8 @@ state = {
     price: '',
     buy_date: '',
     amount: ''
-  }
+  },
+  show: true
 }
 
   handleChange = event => {
@@ -32,8 +33,7 @@ state = {
     createCrypto(this.state.crypto, user)
       .then(response => {
         alert({
-          heading: 'Success!!',
-          message: messages.createCryptoSuccess,
+          heading: messages.createCryptoSuccess,
           variant: 'success'
         })
 
@@ -43,8 +43,7 @@ state = {
         console.error(error)
         this.setState({ name: '', price: '', buyDate: '', amount: '' })
         alert({
-          heading: 'Create Crypto Failed',
-          message: messages.createCryptoFailure,
+          heading: messages.createCryptoFailure,
           variant: 'danger'
         })
       })
@@ -56,6 +55,7 @@ state = {
         crypto={this.state.crypto}
         handleChange={this.handleChange}
         handleSubmit={this.onCreateCrypto}
+        show={this.state.show}
       />
     )
   }

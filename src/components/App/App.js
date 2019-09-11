@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { Route } from 'react-router-dom'
+import Particles from 'react-particles-js'
 
 import AuthenticatedRoute from '../AuthenticatedRoute/AuthenticatedRoute'
 import AutoDismissAlert from '../AutoDismissAlert/AutoDismissAlert'
@@ -34,7 +35,22 @@ class App extends Component {
 
   render () {
     const { alerts, user } = this.state
-
+    const particles = { particles: {
+      number: {
+        value: 100
+      },
+      size: {
+        value: 5
+      }
+    },
+    interactivity: {
+      events: {
+        onhover: {
+          enable: true,
+          mode: 'repulse'
+        }
+      }
+    } }
     return (
       <Fragment>
         <Header user={user} />
@@ -46,15 +62,24 @@ class App extends Component {
             message={alert.message}
           />
         ))}
+        <Particles canvasClassName="particles-canvas" params={particles} />
+        <Route exact path='/' render={() => (
+          <h2 className="homepage">
+        Come And Create A Crypto Portfolio To Stay On Top Of Your Investments!</h2>
+        )} />
         <main className="container">
           <Route path='/sign-up' render={() => (
-            <SignUp alert={this.alert} setUser={this.setUser} />
+            <div>
+              <SignUp alert={this.alert} setUser={this.setUser} />
+            </div>
           )} />
           <Route path='/sign-in' render={() => (
             <SignIn alert={this.alert} setUser={this.setUser} />
           )} />
           <AuthenticatedRoute user={user} exact path='/cryptos' render={() => (
-            <IndexCryptos alert={this.alert} user={user}/>
+            <div>
+              <IndexCryptos alert={this.alert} user={user}/>
+            </div>
           )} />
           <AuthenticatedRoute user={user} exact path='/cryptos/:id' render={() => (
             <ShowCrypto alert={this.alert} user={user} />
